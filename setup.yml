@@ -1,0 +1,19 @@
+-   hosts: ca
+    roles:
+    -   ca
+
+-   hosts: etcd
+    roles:
+    -   etcd
+    
+-   hosts: flanneld
+    roles:
+    -   flanneld
+
+-   hosts: k8s_master
+    roles:
+    -   k8s_master
+
+-   hosts: k8s_node
+    roles:
+    -   k8s_node
