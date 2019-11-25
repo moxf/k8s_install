@@ -361,6 +361,8 @@ create_csr_full(){
     create_csr etcd "${etcd_host_set[*]}"  ${#etcd_host_set[*]}
     create_csr flanneld
     create_csr kubectl
+    apiserver_host_addr=`echo ${apiserver_hos}|awk -F':|/' '{print $4}'`
+    full_host_set[${apiserver_host_addr}]=apiserver_host_addr
     create_csr kube-apiserver "${!full_host_set[*]}" ${#full_host_set[@]}
     create_csr kube-controller-manager "${k8s_master_host_set[*]}" ${#k8s_master_host_set[@]}
     create_csr kube-scheduler "${k8s_master_host_set[*]}" ${#k8s_master_host_set[@]}
