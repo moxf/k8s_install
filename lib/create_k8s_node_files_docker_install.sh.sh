@@ -46,7 +46,7 @@ install_docker(){
     rm -rf /var/cache/yum
     yum makecache
     #安装相关依赖
-    yum -y install yum-utils device-mapper-persistemt-data lvm2  container-selinux
+    yum -y install yum-utils device-mapper-persistent-data lvm2  container-selinux
     #配置yum仓库
     yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
     yum makecache fast
