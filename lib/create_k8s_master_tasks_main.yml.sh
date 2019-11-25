@@ -79,19 +79,19 @@ cat >${k8s_tasks_file} <<EOF
         name: kube-apiserver
         state: started
         enabled: true
+-   name: check cluster status
+    shell: kubectl cluster-info 
+    register: result
+-   name: show cluster status
+    debug:
+        var: result
+        verbosity: 0
 -   name: add kubernetes cert auth 
     shell: kubectl create clusterrolebinding kube-apiserver:kubelet-apis --clusterrole=system:kubelet-api-admin --user kubernetes
     register: resultl
     when:
         master_tag == '${exec_command_host}'        
 -   name: show add kubernetes cert auth result
-    debug:
-        var: result
-        verbosity: 0
--   name: check cluster status
-    shell: kubectl cluster-info 
-    register: result
--   name: show cluster status
     debug:
         var: result
         verbosity: 0

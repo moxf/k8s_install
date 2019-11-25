@@ -77,15 +77,18 @@ flanneld_package_name=xxx
 k8s_package_name=xxx
 
 #修改集群主机信息
-etcd_host_set=
-k8s_master_host_set=
-k8s_node_host_set=
+etcd_host_set=xxx
+k8s_master_host_set=xxx
+k8s_node_host_set=xxx
 
 #修改docker版本信息
-docker_version=
+docker_version=xxx
+
+#修改apiserver访问地址
+apiserver_host=xxx
 ```
 
-- 将etcd、flanneld、kubernetes-server二进制安装包拷贝到src目录
+- 将etcd、flanneld、kubernetes-server二进制安装包拷贝到本工程目录下的src目录
 ```
 cp  etcdxxx src/
 cp  flanneldxxx src/
