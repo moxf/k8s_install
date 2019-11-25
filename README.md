@@ -58,7 +58,7 @@
 #### 使用说明
 - 在控制机器上安装ansible并能让控制机以root用户免密登录上所有机器
 ```
-yum -y install ansible
+yum -y install ansible git
 ```
 
 - 下载部署脚本
